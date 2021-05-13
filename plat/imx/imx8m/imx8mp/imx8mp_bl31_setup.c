@@ -50,7 +50,6 @@ static const struct imx_rdc_cfg rdc[] = {
 	RDC_MDAn(RDC_MDA_M7, DID1),
 
 	/* peripherals domain permission */
-	RDC_PDAPn(RDC_PDAP_UART2, D0R | D0W),
 	RDC_PDAPn(RDC_PDAP_WDOG1, D0R | D0W),
 	RDC_PDAPn(RDC_PDAP_RDC, D0R | D0W | D1R),
 
