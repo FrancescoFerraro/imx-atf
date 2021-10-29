@@ -165,7 +165,9 @@ static void bl31_tzc380_setup(void)
 void bl31_early_platform_setup2(u_register_t arg0, u_register_t arg1,
 		u_register_t arg2, u_register_t arg3)
 {
+#if VAR_ENABLE_IMX_UART
 	static console_t console;
+#endif
 	unsigned int val;
 	unsigned int i;
 
@@ -187,11 +189,12 @@ void bl31_early_platform_setup2(u_register_t arg0, u_register_t arg1,
 
 	imx8m_caam_init();
 
+#if VAR_ENABLE_IMX_UART
 	console_imx_uart_register(IMX_BOOT_UART_BASE, IMX_BOOT_UART_CLK_IN_HZ,
 		IMX_CONSOLE_BAUDRATE, &console);
 	/* This console is only used for boot stage */
 	console_set_scope(&console, CONSOLE_FLAG_BOOT);
-
+#endif
 	/*
 	 * tell BL3-1 where the non-secure software image is located
 	 * and the entry state information.
