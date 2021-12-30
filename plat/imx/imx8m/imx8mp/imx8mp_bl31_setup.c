@@ -51,7 +51,7 @@ static const struct imx_rdc_cfg rdc[] = {
 
 	/* peripherals domain permission */
 	RDC_PDAPn(RDC_PDAP_WDOG1, D0R | D0W),
-	RDC_PDAPn(RDC_PDAP_RDC, D0R | D0W | D1R),
+	RDC_PDAPn(RDC_PDAP_RDC, D0R | D0W | D1R | D1W),
 
 	/* memory region */
 
