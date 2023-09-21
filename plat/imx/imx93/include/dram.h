@@ -37,6 +37,8 @@ struct dram_fsp_cfg{
 };
 
 struct dram_timing_info {
+	/* ddrphy firmware offset */
+	unsigned int ddrphy_fw_offset;
 	/* umctl2 config */
 	struct dram_cfg_param *ddrc_cfg;
 	unsigned int ddrc_cfg_num;
